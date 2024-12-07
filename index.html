@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Name Joke Generator</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      text-align: center;
+      background-color: #f5f5f5;
+      padding: 20px;
+    }
+    .container {
+      max-width: 400px;
+      margin: 0 auto;
+      background: #fff;
+      padding: 20px;
+      border-radius: 8px;
+      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    }
+    input {
+      width: 100%;
+      padding: 10px;
+      margin-bottom: 10px;
+      border: 1px solid #ddd;
+      border-radius: 4px;
+    }
+    button {
+      background-color: #007BFF;
+      color: white;
+      border: none;
+      padding: 10px;
+      width: 100%;
+      border-radius: 4px;
+      cursor: pointer;
+    }
+    button:hover {
+      background-color: #0056b3;
+    }
+    .result {
+      margin-top: 20px;
+      font-size: 18px;
+      color: #333;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h1>Funny Name Joke Generator</h1>
+    <p>Enter your name to see a funny joke!</p>
+    <input type="text" id="nameInput" placeholder="Your Name" />
+    <button onclick="generateJoke()">Submit</button>
+    <div class="result" id="result"></div>
+  </div>
+
+  <script>
+    function generateJoke() {
+      const name = document.getElementById('nameInput').value.trim();
+      const resultDiv = document.getElementById('result');
+  
+      if (!name) {
+        resultDiv.textContent = "Oops! Please enter your name.";
+        return;
+      }
+  
+      const jokes = [
+        `${name}, you're like a cloud... when you disappear, it's a beautiful day!`,
+        `Breaking news: ${name} just got hired as the "chief excuse maker" at Netflix!`,
+        `${name}, you're so bright, even your shadow gets jealous!`,
+        `Hey ${name}, you're the kind of person who claps when the plane lands, aren't you?`,
+        `${name}, if stupidity was an Olympic sport, you'd be a gold medalist.`,
+        `Oh no, ${name}! Are you Wi-Fi? Because I'm feeling no connection.`,
+        `${name}, you remind me of a software update: nobody likes you, but they know they need you.`,
+        
+        // Lightly dirty jokes start here
+        `${name}, are you a bank loan? Because you have my interest... and my stress.`,
+        `Hey ${name}, are you made of copper and tellurium? Because you're Cu-Te (but toxic)!`,
+        `${name}, you're like my phone battery—I'm into you, but you're draining me.`,
+        `${name}, you're so sweet, diabetics are afraid to stand next to you.`,
+        `Is it hot in here, or is it just ${name} being "extra spicy" today?`,
+        `Well, ${name}, they say what happens in Vegas stays in Vegas... but you're the exception.`,
+        `${name}, are you a browser tab? Because you keep crashing my system.`,
+        `Dear ${name}, if laughter is the best medicine, you're the cure for boredom... and my life crisis.`,
+      ];
+  
+      // Randomly pick a joke
+      const randomJoke = jokes[Math.floor(Math.random() * jokes.length)];
+      resultDiv.textContent = randomJoke;
+    }
+  </script>
+  
+</body>
+</html>
